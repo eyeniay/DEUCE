@@ -1,0 +1,9 @@
+	ORG I 2		#Origin of the instruction memory
+	LD R1,A		#Load A into the register R1
+	ADD R2,R1,2 B 	# Add 2 to R1 and store the result to R2
+	ST R2,S		#Store the content of R2 to the address S indicates
+	HLT
+	ORG D 3         #Origin of the data memory
+A:	DEC 8
+S:	HEX 5
+	END		# End of symbolic program

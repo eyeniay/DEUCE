@@ -1,0 +1,15 @@
+		ORG I 4
+		LD R1,A			#Load Number1
+		IN R2			#Load Number2 from input register
+		SUB R3,R2,R1	#Number2-Number1
+		JMP 01,L		#If Result is zero jump to label L
+		CALL XR			#Call subroutine XR
+L:		ST R3,RES		#Store result to RES
+		OUT 8 B			#Output the data at the address 8
+		HLT
+XR:		XOR R3,R2,R1	#XOR (Number1,Number2)
+		RET
+		ORG D 7
+A: 		HEX 3
+RES:	DEC 5
+		END
